@@ -1,15 +1,10 @@
-"""
-app.py — Redrob Candidate Ranker (v4)
-"""
 
 import json
-import math
-import re
 import os
 import sys
 import time
-from collections import Counter
 
+import numpy as np
 import pandas as pd
 import streamlit as st
 
@@ -17,18 +12,12 @@ st.set_page_config(page_title="Redrob Candidate Ranker", page_icon="🎯", layou
 
 st.markdown("""
 <style>
-.metric-card {
-    background: #f8f9fa;
-    border: 1px solid #e9ecef;
-    border-radius: 12px;
-    padding: 1rem 1.25rem;
-    text-align: center;
-}
-.metric-label { font-size: 12px; color: #6c757d; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
-.metric-value { font-size: 28px; font-weight: 700; color: #1a1a2e; }
-.metric-sub   { font-size: 11px; color: #adb5bd; margin-top: 2px; }
+.metric-card { background:#f8f9fa; border:1px solid #e9ecef; border-radius:12px; padding:1rem 1.25rem; text-align:center; }
+.metric-label { font-size:12px; color:#6c757d; margin-bottom:4px; text-transform:uppercase; letter-spacing:0.05em; }
+.metric-value { font-size:28px; font-weight:700; color:#1a1a2e; }
+.metric-sub   { font-size:11px; color:#adb5bd; margin-top:2px; }
 .score-bar-wrap { background:#f0f0f0; border-radius:4px; height:6px; margin-top:4px; }
-.score-bar    { background: linear-gradient(90deg,#667eea,#764ba2); border-radius:4px; height:6px; }
+.score-bar    { background:linear-gradient(90deg,#667eea,#764ba2); border-radius:4px; height:6px; }
 .tag          { display:inline-block; background:#e3f2fd; color:#1565c0; border-radius:4px; padding:1px 7px; font-size:11px; margin:2px; }
 .tag-warn     { background:#fff3e0; color:#e65100; }
 .tag-ok       { background:#e8f5e9; color:#2e7d32; }
@@ -40,13 +29,6 @@ st.markdown("""
 .explain-val   { font-size:11px; font-weight:600; color:#1a1a2e; min-width:34px; text-align:right; }
 </style>
 """, unsafe_allow_html=True)
-
-# ── TF-IDF helpers ────────────────────────────────────────────────────────────
-
-JD_TEXT = """senior ai engineer embeddings retrieval ranking sentence transformers
-bge vector database pinecone weaviate qdrant milvus faiss opensearch elasticsearch
-hybrid search python production ndcg mrr evaluation framework ab testing lora peft
-fine tuning nlp recommendation information retrieval"""
 
 OPTIMAL_WEIGHTS = {
     "semantic_sim":     0.25,
@@ -70,7 +52,6 @@ WEIGHT_LABELS = {
     "title_match":      "Title match",
 }
 
-# Tidepool-style fixed categorical colors for the donut/breakdown
 WEIGHT_COLORS = {
     "semantic_sim":     "#2a78d6",
     "required_skill":   "#1baf7a",
@@ -82,31 +63,29 @@ WEIGHT_COLORS = {
     "title_match":      "#eb6834",
 }
 
-def tokenize(t):
-    return re.findall(r"[a-z0-9]+", t.lower())
+JD_TEXT = """Senior AI Engineer building production retrieval and ranking systems.
+Required: embeddings, vector database, FAISS, Pinecone, Weaviate, Qdrant, Milvus,
+OpenSearch, Elasticsearch, hybrid search, Python, ranking, retrieval,
+information retrieval, NDCG, MRR, MAP, evaluation framework, A/B testing.
+Nice to have: LoRA, QLoRA, PEFT, fine-tuning, learning to rank, XGBoost,
+distributed systems, large scale inference, open source, NLP, recommendation systems."""
 
-def build_idf(docs):
-    N = len(docs)
-    df = {}
-    for toks in docs:
-        for t in set(toks):
-            df[t] = df.get(t, 0) + 1
-    return {t: math.log((N + 1) / (c + 1)) + 1 for t, c in df.items()}
 
-def tfidf_vec(toks, idf):
-    tf = Counter(toks)
-    total = max(len(toks), 1)
-    return {t: (c / total) * idf.get(t, 1.0) for t, c in tf.items()}
+@st.cache_resource(show_spinner=False)
+def load_model():
+    """Load BGE-small-en-v1.5 once and cache it across reruns."""
+    from sentence_transformers import SentenceTransformer
+    return SentenceTransformer("BAAI/bge-small-en-v1.5")
 
-def cosine(a, b):
-    shared = set(a) & set(b)
-    dot = sum(a[t] * b[t] for t in shared)
-    na = math.sqrt(sum(v * v for v in a.values()))
-    nb = math.sqrt(sum(v * v for v in b.values()))
-    return dot / (na * nb) if na > 0 and nb > 0 else 0.0
+
+@st.cache_resource(show_spinner=False)
+def get_jd_embedding(_model):
+    """Embed the JD once and cache it."""
+    emb = _model.encode([JD_TEXT], normalize_embeddings=True, convert_to_numpy=True)
+    return emb[0]
+
 
 def explain_bar(label, value, max_value=1.0, color="#667eea", fmt="{:.2f}"):
-    """Render a single explainability progress bar (HTML)."""
     pct = max(0, min(100, (value / max_value) * 100)) if max_value else 0
     val_str = fmt.format(value)
     return f"""
@@ -116,14 +95,12 @@ def explain_bar(label, value, max_value=1.0, color="#667eea", fmt="{:.2f}"):
   <div class="explain-val">{val_str}</div>
 </div>"""
 
+
 # ── Sidebar ───────────────────────────────────────────────────────────────────
 
 with st.sidebar:
     st.markdown("## Upload candidates")
-    uploaded = st.file_uploader(
-        "JSON or JSONL · max 100 candidates",
-        type=["json", "jsonl"],
-    )
+    uploaded = st.file_uploader("JSON or JSONL · max 100 candidates", type=["json", "jsonl"])
 
     candidates = []
     if uploaded:
@@ -139,11 +116,7 @@ with st.sidebar:
         st.markdown("---")
         st.markdown("## Scoring weights")
 
-        weight_mode = st.radio(
-            "Mode",
-            ["Optimal (recommended)", "Manual"],
-            index=0,
-        )
+        weight_mode = st.radio("Mode", ["Optimal (recommended)", "Manual"], index=0)
 
         if weight_mode == "Manual":
             st.caption("Sliders are independent — no need to sum to 1.")
@@ -188,8 +161,8 @@ if not candidates:
 
         f1, f2, f3 = st.columns(3)
         for col, icon, title, body in [
-            (f1, "🧠", "Smart scoring", "23 behavioral signals + semantic similarity + career depth"),
-            (f2, "⚡", "CPU-only", "TF-IDF similarity — no GPU, no sentence-transformers"),
+            (f1, "🧠", "BGE embeddings", "BAAI/bge-small-en-v1.5 — 384-dim semantic similarity"),
+            (f2, "⚡", "FAISS index", "Cosine similarity over candidate embeddings, CPU-only"),
             (f3, "🛡️", "Honeypot safe", "Fake profiles automatically detected and zeroed out"),
         ]:
             with col:
@@ -204,7 +177,7 @@ if not candidates:
         st.markdown("#### How it works")
         steps = [
             ("1", "Upload", "Drop your candidates JSON on the left"),
-            ("2", "Extract", "Features pulled: skills depth, career history, 23 redrob signals"),
+            ("2", "Embed", "BGE-small generates 384-dim embeddings for JD + candidates"),
             ("3", "Score",  "Weighted formula + honeypot/consulting penalties applied"),
             ("4", "Rank",   "Top 100 sorted, reasoning generated, CSV ready to submit"),
         ]
@@ -217,6 +190,8 @@ if not candidates:
   <div style="font-weight:600;font-size:0.8rem;margin-bottom:0.25rem">{title}</div>
   <div style="font-size:0.7rem;color:#6c757d;line-height:1.4">{body}</div>
 </div>""", unsafe_allow_html=True)
+
+        st.info("First run loads the BGE model (~30-60s). Subsequent runs are fast — the model stays cached.")
 
         st.markdown("---")
         st.markdown("""
@@ -235,7 +210,7 @@ else:
     run = st.button("Run ranker", type="primary", use_container_width=True)
 
     if run:
-        progress = st.progress(0, text="Extracting features...")
+        progress = st.progress(0, text="Loading BGE model...")
         with st.spinner(""):
             t0 = time.time()
             try:
@@ -244,22 +219,39 @@ else:
                 from reasoning import generate_reasoning
                 from scorer import behavioral_composite, PENALTIES
 
-                jd = {"required_skills": [], "nice_to_have_skills": [], "disqualifiers": []}
+                model = load_model()
+                progress.progress(0.2, text="Model loaded. Extracting features...")
 
+                jd = {"required_skills": [], "nice_to_have_skills": [], "disqualifiers": []}
                 all_features = []
                 for i, c in enumerate(candidates):
                     all_features.append(extract_features(c, jd))
-                    progress.progress((i + 1) / len(candidates), text=f"Extracting features… {i+1}/{len(candidates)}")
+                    progress.progress(0.2 + 0.3 * (i + 1) / len(candidates),
+                                       text=f"Extracting features… {i+1}/{len(candidates)}")
 
-                progress.progress(0.7, text="Computing similarity…")
-                texts = [f["text"] or "empty" for f in all_features]
-                jd_toks = tokenize(JD_TEXT)
-                cand_toks = [tokenize(t) for t in texts]
-                idf = build_idf([jd_toks] + cand_toks)
-                jd_vec = tfidf_vec(jd_toks, idf)
-                sims = [cosine(jd_vec, tfidf_vec(toks, idf)) for toks in cand_toks]
+                progress.progress(0.55, text="Generating BGE embeddings...")
+                texts = [f["text"] or "empty profile" for f in all_features]
+                cand_embeddings = model.encode(
+                    texts, normalize_embeddings=True, convert_to_numpy=True,
+                    show_progress_bar=False, batch_size=32
+                )
+                jd_emb = get_jd_embedding(model)
 
-                progress.progress(0.85, text="Scoring candidates…")
+                progress.progress(0.75, text="Computing FAISS cosine similarity...")
+                try:
+                    import faiss
+                    index = faiss.IndexFlatIP(cand_embeddings.shape[1])
+                    index.add(cand_embeddings.astype(np.float32))
+                    sims_arr, _ = index.search(jd_emb.reshape(1, -1).astype(np.float32), len(candidates))
+                    sim_map = {}
+                    D, I = index.search(jd_emb.reshape(1, -1).astype(np.float32), len(candidates))
+                    for score, idx in zip(D[0], I[0]):
+                        sim_map[idx] = float(score)
+                    sims = [sim_map.get(i, float(jd_emb @ cand_embeddings[i])) for i in range(len(candidates))]
+                except ImportError:
+                    sims = (cand_embeddings @ jd_emb).tolist()
+
+                progress.progress(0.88, text="Scoring candidates…")
                 scored = []
                 honeypot_count = 0
                 consulting_count = 0
@@ -304,10 +296,10 @@ else:
                 scored.sort(key=lambda x: (-x["score"], x["features"]["candidate_id"]))
                 top_n = scored[:min(100, len(scored))]
 
-                progress.progress(0.95, text="Generating reasoning…")
+                progress.progress(0.97, text="Generating reasoning…")
                 rows = []
                 for rank_pos, item in enumerate(top_n, 1):
-                    r = generate_reasoning(item["candidate"], item["features"], rank_pos, item["score"])
+                    r = generate_reasoning(item["candidate"], item["features"], rank=rank_pos, score=item["score"])
                     beh = behavioral_composite(item["features"])
                     rows.append({
                         "Rank":        rank_pos,
@@ -329,7 +321,6 @@ else:
                 time.sleep(0.3)
                 progress.empty()
 
-                # ── KPI cards (highest priority) ───────────────────────────────
                 k1, k2, k3, k4 = st.columns(4)
                 top_score = rows[0]["Score"] if rows else 0
                 with k1:
@@ -343,7 +334,6 @@ else:
 
                 st.markdown("<br>", unsafe_allow_html=True)
 
-                # ── Alerts ────────────────────────────────────────────────────
                 if honeypot_count > 0:
                     st.markdown(f"""
 <div class="honeypot-alert">
@@ -353,7 +343,6 @@ else:
                 if consulting_count > 0:
                     st.info(f"ℹ️ {consulting_count} candidate(s) penalised for consulting-only career history.")
 
-                # ── Score distribution ────────────────────────────────────────
                 st.markdown("### Score distribution")
                 df = pd.DataFrame(rows)
                 hist_df = df[["Rank", "Score"]].set_index("Rank")
@@ -361,7 +350,6 @@ else:
 
                 st.markdown("<br>", unsafe_allow_html=True)
 
-                # ── Score breakdown donut (average across top 100) ─────────────
                 st.markdown("### Score component breakdown")
                 st.caption("Average contribution of each weighted component across the ranked set.")
 
@@ -371,13 +359,10 @@ else:
                 total_contrib = sum(avg_components.values()) or 1.0
 
                 dc1, dc2 = st.columns([1, 1])
-
                 with dc1:
-                    # Donut via Chart.js
                     labels_js = json.dumps([WEIGHT_LABELS[k] for k in WEIGHT_LABELS])
                     data_js = json.dumps([round(avg_components[k], 4) for k in WEIGHT_LABELS])
                     colors_js = json.dumps([WEIGHT_COLORS[k] for k in WEIGHT_LABELS])
-
                     chart_html = f"""
 <div style="position:relative;width:100%;height:260px">
 <canvas id="donutChart" role="img" aria-label="Donut chart of score component contributions">Score breakdown by component</canvas>
@@ -386,14 +371,8 @@ else:
 <script>
 new Chart(document.getElementById('donutChart'), {{
   type: 'doughnut',
-  data: {{
-    labels: {labels_js},
-    datasets: [{{ data: {data_js}, backgroundColor: {colors_js}, borderWidth: 2, borderColor: '#fff' }}]
-  }},
-  options: {{
-    responsive: true, maintainAspectRatio: false,
-    plugins: {{ legend: {{ display: false }} }}
-  }}
+  data: {{ labels: {labels_js}, datasets: [{{ data: {data_js}, backgroundColor: {colors_js}, borderWidth: 2, borderColor: '#fff' }}] }},
+  options: {{ responsive: true, maintainAspectRatio: false, plugins: {{ legend: {{ display: false }} }} }}
 }});
 </script>
 """
@@ -413,12 +392,10 @@ new Chart(document.getElementById('donutChart'), {{
 
                 st.markdown("<br>", unsafe_allow_html=True)
 
-                # ── Results table ─────────────────────────────────────────────
                 st.markdown("### Ranked candidates")
                 display_df = df.drop(columns=["Reasoning", "_consulting", "_honeypot", "_components"])
                 st.dataframe(display_df, use_container_width=True, height=420)
 
-                # ── Top 10 cards with explainability bars ───────────────────────
                 st.markdown("### Top 10 candidates")
                 for row in rows[:10]:
                     score_pct = min(int(row["Score"] * 200), 100)
@@ -454,25 +431,13 @@ new Chart(document.getElementById('donutChart'), {{
   </div>
 </div>""", unsafe_allow_html=True)
 
-                # ── Download ──────────────────────────────────────────────────
                 st.markdown("<br>", unsafe_allow_html=True)
                 csv_data = (
                     df[["Candidate ID", "Rank", "Score", "Reasoning"]]
-                    .rename(columns={
-                        "Candidate ID": "candidate_id",
-                        "Rank": "rank",
-                        "Score": "score",
-                        "Reasoning": "reasoning",
-                    })
+                    .rename(columns={"Candidate ID": "candidate_id", "Rank": "rank", "Score": "score", "Reasoning": "reasoning"})
                     .to_csv(index=False)
                 )
-                st.download_button(
-                    "Download submission CSV",
-                    csv_data,
-                    "elabs_submission.csv",
-                    "text/csv",
-                    use_container_width=True,
-                )
+                st.download_button("Download submission CSV", csv_data, "elabs_submission.csv", "text/csv", use_container_width=True)
 
             except Exception as e:
                 progress.empty()
@@ -481,4 +446,4 @@ new Chart(document.getElementById('donutChart'), {{
                 st.code(traceback.format_exc())
 
 st.markdown("---")
-st.caption("Redrob Hackathon 2026 · Team elabs · TF-IDF + Weighted Scoring + Behavioral Signals")
+st.caption("Redrob Hackathon 2026 · Team elabs · BGE-small-en-v1.5 + FAISS + Weighted Scoring")
