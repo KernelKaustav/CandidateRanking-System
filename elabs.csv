@@ -1,0 +1,101 @@
+candidate_id,rank,score,reasoning
+CAND_0071974,1,0.58624,"7.8yr Senior AI Engineer from Netflix and Meta with strong Elasticsearch, Qdrant, Weaviate depth (active 2mo ago, 45d notice, 76% response rate) — matches the product-company background and retrieval/ranking core the JD requires"
+CAND_0018499,2,0.561846,"7.2yr Senior Machine Learning Engineer from Zomato and Google with strong RAG, scikit-learn, Weaviate depth (active 6w ago, 15d notice, 61% response rate) — matches the product-company background and retrieval/ranking core the JD requires"
+CAND_0081846,3,0.542082,"6.7yr Lead AI Engineer from Razorpay and Paytm with strong Embeddings, Information Retrieval, Vector Search depth (active 8w ago, 30d notice, 73% response rate) — matches the product-company background and retrieval/ranking core the JD requires"
+CAND_0041669,4,0.533184,"8.0yr Recommendation Systems Engineer from CRED and Mad Street Den with strong Semantic Search, Milvus, Weights & Biases depth (active 2mo ago, 60d notice, 77% response rate) — matches the product-company background and retrieval/ranking core the JD requires"
+CAND_0086022,5,0.5329,"5.3yr Senior Applied Scientist from Sarvam AI and Uber with strong PyTorch, Sentence Transformers, pgvector depth (90d notice, 55% response rate) — matches the product-company background and retrieval/ranking core the JD requires"
+CAND_0044855,6,0.526682,"6.6yr Senior Data Scientist from Flipkart and LinkedIn with strong Information Retrieval, Learning to Rank, OpenSearch depth (active 2mo ago, 60d notice, 57% response rate) — matches the product-company background and retrieval/ranking core the JD requires; not currently marked open-to-work."
+CAND_0011162,7,0.522993,"5.8yr Recommendation Systems Engineer from upGrad and Meesho with strong FAISS, OpenSearch, LangChain depth (90d notice, 75% response rate) — matches the product-company background and retrieval/ranking core the JD requires"
+CAND_0006557,8,0.519662,"7.9yr NLP Engineer from Paytm and Apple with strong Vector Search, FAISS, Hugging Face Transformers depth (120d notice, 63% response rate) — matches the product-company background and retrieval/ranking core the JD requires; notice period (120d) is the main friction."
+CAND_0002025,9,0.519009,"5.9yr Senior AI Engineer from Apple and Aganitha with strong FAISS, TensorFlow, LangChain depth (active 4w ago, 30d notice, 80% response rate) — matches the product-company background and retrieval/ranking core the JD requires"
+CAND_0066999,10,0.513561,"5.9yr Recommendation Systems Engineer from Microsoft and Amazon with strong LLMs, Machine Learning, CNN depth (active 2mo ago, 15d notice, 63% response rate) — matches the product-company background and retrieval/ranking core the JD requires"
+CAND_0008425,11,0.508361,"7.8yr Senior NLP Engineer with relevant Sentence Transformers, Haystack, Qdrant experience at Ola and Zomato; solid retrieval/ranking signal but recruiter response rate (66%) is a mild concern."
+CAND_0006418,12,0.503587,"5.7yr Machine Learning Engineer with relevant Weaviate, Embeddings, Semantic Search experience at Verloop.io and Flipkart; solid retrieval/ranking signal but recruiter response rate (92%) is a mild concern."
+CAND_0028793,13,0.501143,"7.2yr Search Engineer with relevant LoRA, Embeddings, Learning to Rank experience at Google and Amazon; solid retrieval/ranking signal but long notice period (120d)."
+CAND_0099806,14,0.500996,"4.6yr AI Engineer with relevant Prompt Engineering, Embeddings, Qdrant experience at Mad Street Den and upGrad; solid retrieval/ranking signal but recruiter response rate (76%) is a mild concern."
+CAND_0046064,15,0.498814,"8.9yr Senior NLP Engineer with relevant PEFT, Pinecone, Elasticsearch experience at Salesforce and Verloop.io; solid retrieval/ranking signal but recruiter response rate (78%) is a mild concern."
+CAND_0020877,16,0.498221,"5.1yr Applied ML Engineer with relevant scikit-learn, LlamaIndex, Deep Learning experience at CRED and BYJU'S; solid retrieval/ranking signal but recruiter response rate (66%) is a mild concern."
+CAND_0052328,17,0.496361,"6.5yr Recommendation Systems Engineer with relevant scikit-learn, Sentence Transformers, QLoRA experience at Amazon and Observe.AI; solid retrieval/ranking signal but recruiter response rate (79%) is a mild concern."
+CAND_0077285,18,0.496123,"5.5yr Recommendation Systems Engineer with relevant Fine-tuning LLMs, LoRA, Sentence Transformers experience at Nykaa and Netflix; solid retrieval/ranking signal but recruiter response rate (56%) is a mild concern."
+CAND_0086151,19,0.495704,"7.7yr Recommendation Systems Engineer with relevant Qdrant, Elasticsearch, Statistical Modeling experience at Wysa and Glance; solid retrieval/ranking signal but long notice period (120d)."
+CAND_0080766,20,0.495522,"8.8yr Staff Machine Learning Engineer with relevant TensorFlow, Search & Discovery, LoRA experience at Salesforce and Aganitha; solid retrieval/ranking signal but recruiter response rate (66%) is a mild concern."
+CAND_0061265,21,0.494298,"6.6yr Recommendation Systems Engineer with relevant Learning to Rank, Qdrant, Hugging Face Transformers experience at Zoho and Observe.AI; solid retrieval/ranking signal but long notice period (120d)."
+CAND_0079387,22,0.49414,"6.9yr AI Engineer with relevant OpenSearch, LoRA, Vector Search experience at Microsoft and upGrad; solid retrieval/ranking signal but recruiter response rate (81%) is a mild concern."
+CAND_0037944,23,0.491617,"4.9yr Senior Data Scientist with relevant Python, OpenSearch, LlamaIndex experience at Vedantu and PolicyBazaar; solid retrieval/ranking signal but inactive for 98d."
+CAND_0049538,24,0.490678,"5.8yr Applied ML Engineer with relevant Elasticsearch, Milvus, OpenSearch experience at Saarthi.ai and PolicyBazaar; solid retrieval/ranking signal but recruiter response rate (72%) is a mild concern."
+CAND_0093912,25,0.490506,"5.3yr Senior Data Scientist with relevant Vector Search, Elasticsearch, Milvus experience at Razorpay and Flipkart; solid retrieval/ranking signal but recruiter response rate (66%) is a mild concern."
+CAND_0033861,26,0.489957,"8.0yr Senior NLP Engineer with relevant Learning to Rank, LLMs, Vector Search experience at Mad Street Den and Sarvam AI; solid retrieval/ranking signal but inactive for 132d."
+CAND_0050876,27,0.488076,"6.0yr Applied ML Engineer with relevant scikit-learn, Prompt Engineering, Sentence Transformers experience at Freshworks and Yellow.ai; solid retrieval/ranking signal but recruiter response rate (67%) is a mild concern."
+CAND_0077337,28,0.487131,"7.0yr Staff Machine Learning Engineer with relevant Recommendation Systems, Python, RAG experience at Paytm and Razorpay; solid retrieval/ranking signal but recruiter response rate (95%) is a mild concern."
+CAND_0036184,29,0.484193,"6.0yr Recommendation Systems Engineer with relevant Sentence Transformers, PyTorch, Embeddings experience at CRED and PolicyBazaar; solid retrieval/ranking signal but recruiter response rate (90%) is a mild concern."
+CAND_0018549,30,0.483947,"6.8yr Recommendation Systems Engineer with relevant Prompt Engineering, LangChain, Milvus experience at Uber and Flipkart; solid retrieval/ranking signal but recruiter response rate (73%) is a mild concern."
+CAND_0027691,31,0.483465,"6.5yr NLP Engineer at Haptik and Vedantu — adjacent background with some skill overlap (Recommendation Systems, TensorFlow, Weaviate), but limited production retrieval/ranking signal in profile."
+CAND_0030031,32,0.483432,"5.7yr AI Engineer at Microsoft and Amazon — adjacent background with some skill overlap (LoRA, NLP, scikit-learn), but limited production retrieval/ranking signal in profile."
+CAND_0088025,33,0.482857,"8.6yr Staff Machine Learning Engineer at Yellow.ai and Niramai — adjacent background with some skill overlap (Learning to Rank, TensorFlow, QLoRA), but few required skills matched (embeddings, vector search, evaluation)."
+CAND_0098454,34,0.481769,"6.6yr AI Specialist at Meesho and Wipro — adjacent background with some skill overlap (Feature Engineering, GANs, Weaviate), but limited production retrieval/ranking signal in profile."
+CAND_0064904,35,0.48156,"4.9yr AI Engineer at LinkedIn and Freshworks — adjacent background with some skill overlap (TensorFlow, Prompt Engineering, Embeddings), but limited production retrieval/ranking signal in profile."
+CAND_0046525,36,0.480784,"6.1yr Senior Machine Learning Engineer at Genpact AI and LinkedIn — adjacent background with some skill overlap (Sentence Transformers, Machine Learning, LlamaIndex), but limited production retrieval/ranking signal in profile."
+CAND_0030468,37,0.480136,"5.4yr Senior Applied Scientist at Swiggy and CRED — adjacent background with some skill overlap (OpenSearch, Milvus, Content Matching), but limited production retrieval/ranking signal in profile."
+CAND_0075439,38,0.479958,"4.3yr Machine Learning Engineer at Flipkart and Genpact AI — adjacent background with some skill overlap (Elasticsearch, ASR, Semantic Search), but limited production retrieval/ranking signal in profile."
+CAND_0076163,39,0.479464,"6.9yr NLP Engineer at Ola and Zoho — adjacent background with some skill overlap (LlamaIndex, Semantic Search, LangChain), but limited production retrieval/ranking signal in profile."
+CAND_0047721,40,0.479369,"7.0yr Senior Data Scientist at Microsoft and Observe.AI — adjacent background with some skill overlap (Qdrant, NLP, Information Retrieval), but limited production retrieval/ranking signal in profile."
+CAND_0081053,41,0.479081,"5.4yr NLP Engineer at Glance and Salesforce — adjacent background with some skill overlap (Semantic Search, Machine Learning, Weaviate), but few required skills matched (embeddings, vector search, evaluation)."
+CAND_0015582,42,0.478686,"4.4yr ML Engineer at Genpact AI and TCS — adjacent background with some skill overlap (Statistical Modeling, Speech Recognition, Qdrant), but limited production retrieval/ranking signal in profile."
+CAND_0052682,43,0.477898,"6.6yr NLP Engineer at Aganitha and Salesforce — adjacent background with some skill overlap (Semantic Search, Python, QLoRA), but limited production retrieval/ranking signal in profile."
+CAND_0042029,44,0.476302,"6.5yr Senior Data Scientist at Flipkart and Observe.AI — adjacent background with some skill overlap (OpenSearch, PyTorch, NLP), but limited production retrieval/ranking signal in profile."
+CAND_0026532,45,0.474284,"4.8yr Recommendation Systems Engineer at Zomato and Mad Street Den — adjacent background with some skill overlap (Semantic Search, pgvector, Milvus), but limited production retrieval/ranking signal in profile."
+CAND_0011125,46,0.473523,"6.6yr Junior ML Engineer at Wysa and Flipkart — adjacent background with some skill overlap (Milvus, Computer Vision, Weaviate), but limited production retrieval/ranking signal in profile."
+CAND_0011687,47,0.471873,"7.8yr Senior NLP Engineer at Niramai and Krutrim — adjacent background with some skill overlap (OpenSearch, PEFT, LlamaIndex), but limited production retrieval/ranking signal in profile."
+CAND_0000031,48,0.470991,"6.0yr Recommendation Systems Engineer at Swiggy and Mad Street Den — adjacent background with some skill overlap (Pinecone, Information Retrieval, Sentence Transformers), but limited production retrieval/ranking signal in profile."
+CAND_0036121,49,0.470314,"5.2yr ML Engineer at Wysa and Wipro — adjacent background with some skill overlap (Diffusion Models, Learning to Rank, Machine Learning), but limited production retrieval/ranking signal in profile."
+CAND_0009691,50,0.470087,"6.2yr Applied ML Engineer at LinkedIn and Amazon — adjacent background with some skill overlap (LoRA, LangChain, Fine-tuning LLMs), but limited production retrieval/ranking signal in profile."
+CAND_0068811,51,0.469582,"8.0yr Applied ML Engineer at Freshworks and Yellow.ai — adjacent background with some skill overlap (Pinecone, Vector Search, TensorFlow), but limited production retrieval/ranking signal in profile."
+CAND_0042506,52,0.469448,"4.2yr Search Engineer at Verloop.io and Meesho — adjacent background with some skill overlap (Information Retrieval, Deep Learning, NLP), but limited production retrieval/ranking signal in profile."
+CAND_0089947,53,0.4691,"5.4yr Junior ML Engineer at Saarthi.ai and Zoho — adjacent background with some skill overlap (CNN, Elasticsearch, Information Retrieval), but limited production retrieval/ranking signal in profile."
+CAND_0005538,54,0.467817,"5.9yr Senior AI Engineer at Adobe and Locobuzz — adjacent background with some skill overlap (pgvector, Deep Learning, PyTorch), but few required skills matched (embeddings, vector search, evaluation)."
+CAND_0051630,55,0.467438,"6.0yr Machine Learning Engineer at Razorpay and InMobi — adjacent background with some skill overlap (Information Retrieval, LoRA, Elasticsearch), but limited production retrieval/ranking signal in profile."
+CAND_0007009,56,0.467009,"7.9yr Recommendation Systems Engineer at Wysa and PolicyBazaar — adjacent background with some skill overlap (OpenSearch, Python, Learning to Rank), but limited production retrieval/ranking signal in profile."
+CAND_0070398,57,0.466639,"7.2yr Machine Learning Engineer at Genpact AI and Uber — adjacent background with some skill overlap (Embeddings, FAISS, Fine-tuning LLMs), but limited production retrieval/ranking signal in profile."
+CAND_0016163,58,0.466611,"6.7yr Applied ML Engineer at Dream11 and Verloop.io — adjacent background with some skill overlap (TensorFlow, Machine Learning, pgvector), but limited production retrieval/ranking signal in profile."
+CAND_0096142,59,0.465696,"5.0yr Applied ML Engineer at upGrad and BYJU'S — adjacent background with some skill overlap (Python, BM25, Pinecone), but few required skills matched (embeddings, vector search, evaluation)."
+CAND_0029367,60,0.464412,"5.7yr Senior Data Scientist at Rephrase.ai and CRED — adjacent background with some skill overlap (Sentence Transformers, FAISS, RAG), but limited production retrieval/ranking signal in profile."
+CAND_0083307,61,0.464069,7.8yr Search Engineer — included at rank 61 as marginal fit; minimal overlap with JD's core requirements.
+CAND_0060072,62,0.463775,5.7yr Staff Machine Learning Engineer — included at rank 62 as marginal fit; minimal overlap with JD's core requirements.
+CAND_0014440,63,0.462914,6.4yr Recommendation Systems Engineer — included at rank 63 as marginal fit; minimal overlap with JD's core requirements.
+CAND_0045613,64,0.462777,5.0yr Computer Vision Engineer — included at rank 64 as marginal fit; minimal overlap with JD's core requirements.
+CAND_0025640,65,0.462704,5.6yr AI Research Engineer — included at rank 65 as marginal fit; minimal overlap with JD's core requirements.
+CAND_0084819,66,0.461181,4.5yr Search Engineer — included at rank 66 as marginal fit; minimal overlap with JD's core requirements.
+CAND_0073883,67,0.460147,5.3yr AI Specialist — included at rank 67 as marginal fit; minimal overlap with JD's core requirements.
+CAND_0007411,68,0.4598,8.0yr Senior Machine Learning Engineer — included at rank 68 as marginal fit; inactive for 208d and low engagement signals.
+CAND_0044222,69,0.459495,7.7yr AI Engineer — included at rank 69 as marginal fit; minimal overlap with JD's core requirements.
+CAND_0075574,70,0.459494,5.7yr Machine Learning Engineer — included at rank 70 as marginal fit; minimal overlap with JD's core requirements.
+CAND_0039383,71,0.458179,7.1yr Applied ML Engineer — included at rank 71 as marginal fit; minimal overlap with JD's core requirements.
+CAND_0027801,72,0.456442,7.4yr NLP Engineer — included at rank 72 as marginal fit; minimal overlap with JD's core requirements.
+CAND_0001930,73,0.456289,6.9yr Senior Software Engineer (ML) — included at rank 73 as marginal fit; minimal overlap with JD's core requirements.
+CAND_0008978,74,0.455849,6.7yr Junior ML Engineer — included at rank 74 as marginal fit; minimal overlap with JD's core requirements.
+CAND_0062247,75,0.454816,7.3yr AI Engineer — included at rank 75 as marginal fit; minimal overlap with JD's core requirements.
+CAND_0064326,76,0.454568,7.6yr Search Engineer — included at rank 76 as marginal fit; minimal overlap with JD's core requirements.
+CAND_0075249,77,0.454089,6.2yr Applied ML Engineer — included at rank 77 as marginal fit; minimal overlap with JD's core requirements.
+CAND_0041610,78,0.453584,6.7yr Recommendation Systems Engineer — included at rank 78 as marginal fit; minimal overlap with JD's core requirements.
+CAND_0016659,79,0.453314,4.4yr ML Engineer — included at rank 79 as marginal fit; minimal overlap with JD's core requirements.
+CAND_0036437,80,0.452975,4.8yr Search Engineer — included at rank 80 as marginal fit; minimal overlap with JD's core requirements.
+CAND_0074225,81,0.452431,4.3yr Machine Learning Engineer — included at rank 81 as marginal fit; minimal overlap with JD's core requirements.
+CAND_0060835,82,0.451721,6.6yr Senior Software Engineer (ML) — included at rank 82 as marginal fit; minimal overlap with JD's core requirements.
+CAND_0045250,83,0.451658,6.6yr Applied ML Engineer — included at rank 83 as marginal fit; minimal overlap with JD's core requirements.
+CAND_0009024,84,0.451437,5.2yr Search Engineer — included at rank 84 as marginal fit; minimal overlap with JD's core requirements.
+CAND_0093193,85,0.450893,7.9yr Senior Machine Learning Engineer — included at rank 85 as marginal fit; minimal overlap with JD's core requirements.
+CAND_0039754,86,0.449664,16.2yr Senior Applied Scientist — included at rank 86 as marginal fit; minimal overlap with JD's core requirements.
+CAND_0087630,87,0.449303,7.2yr AI Engineer — included at rank 87 as marginal fit; minimal overlap with JD's core requirements.
+CAND_0013393,88,0.448634,5.3yr ML Engineer — included at rank 88 as marginal fit; minimal overlap with JD's core requirements.
+CAND_0020708,89,0.448447,4.2yr Search Engineer — included at rank 89 as marginal fit; minimal overlap with JD's core requirements.
+CAND_0015528,90,0.448427,7.4yr Applied ML Engineer — included at rank 90 as marginal fit; minimal overlap with JD's core requirements.
+CAND_0032216,91,0.447868,6.1yr ML Engineer — included at rank 91 as marginal fit; minimal overlap with JD's core requirements.
+CAND_0054100,92,0.44741,6.0yr Junior ML Engineer — included at rank 92 as marginal fit; minimal overlap with JD's core requirements.
+CAND_0010257,93,0.447176,6.5yr Senior Data Scientist — included at rank 93 as marginal fit; minimal overlap with JD's core requirements.
+CAND_0083852,94,0.446341,6.0yr Data Scientist — included at rank 94 as marginal fit; minimal overlap with JD's core requirements.
+CAND_0066376,95,0.446164,5.7yr Applied ML Engineer — included at rank 95 as marginal fit; minimal overlap with JD's core requirements.
+CAND_0090155,96,0.445752,5.8yr ML Engineer — included at rank 96 as marginal fit; minimal overlap with JD's core requirements.
+CAND_0073007,97,0.445749,5.8yr AI Specialist — included at rank 97 as marginal fit; minimal overlap with JD's core requirements.
+CAND_0061339,98,0.444726,4.2yr Search Engineer — included at rank 98 as marginal fit; minimal overlap with JD's core requirements.
+CAND_0057701,99,0.444575,4.1yr Recommendation Systems Engineer — included at rank 99 as marginal fit; minimal overlap with JD's core requirements.
+CAND_0095528,100,0.443924,5.3yr Senior Data Scientist — included at rank 100 as marginal fit; minimal overlap with JD's core requirements.

@@ -1,0 +1,809 @@
+[
+  {
+    "candidate_id": "cand_001",
+    "current_title": "Senior ML Engineer",
+    "headline": "ML Engineer specializing in embeddings, ranking systems, and production search",
+    "summary": "7 years building production ML systems. Shipped end-to-end semantic search and ranking at Flipkart. Expert in sentence-transformers, FAISS, Elasticsearch, Python. Led NDCG evaluation framework redesign.",
+    "location": "Pune, India",
+    "total_experience_years": 7.0,
+    "skills": [
+      {
+        "name": "python",
+        "proficiency": "Expert",
+        "years_used": 7
+      },
+      {
+        "name": "sentence-transformers",
+        "proficiency": "Expert",
+        "years_used": 4
+      },
+      {
+        "name": "faiss",
+        "proficiency": "Expert",
+        "years_used": 3
+      },
+      {
+        "name": "elasticsearch",
+        "proficiency": "Expert",
+        "years_used": 4
+      },
+      {
+        "name": "ranking",
+        "proficiency": "Expert",
+        "years_used": 4
+      },
+      {
+        "name": "ndcg",
+        "proficiency": "Advanced",
+        "years_used": 3
+      },
+      {
+        "name": "retrieval",
+        "proficiency": "Expert",
+        "years_used": 5
+      },
+      {
+        "name": "vector database",
+        "proficiency": "Advanced",
+        "years_used": 2
+      }
+    ],
+    "work_experience": [
+      {
+        "title": "Senior ML Engineer",
+        "company": "Flipkart",
+        "start_date": "2021-03-01",
+        "end_date": null,
+        "description": "Built production embedding-based search and ranking system. FAISS, Elasticsearch, A/B testing framework. NDCG/MRR evaluation pipelines."
+      },
+      {
+        "title": "ML Engineer",
+        "company": "Razorpay",
+        "start_date": "2018-06-01",
+        "end_date": "2021-02-28",
+        "description": "Information retrieval, hybrid search, Python, ranking models."
+      }
+    ],
+    "education": [
+      {
+        "degree": "B.Tech",
+        "field_of_study": "Computer Science",
+        "institution": "IIT Bombay"
+      }
+    ],
+    "redrob_signals": {
+      "open_to_work_flag": true,
+      "last_active_date": "2026-06-25",
+      "recruiter_response_rate": 0.85,
+      "interview_completion_rate": 0.9,
+      "profile_completeness_score": 92,
+      "github_activity_score": 78,
+      "notice_period_days": 30,
+      "willing_to_relocate": true
+    }
+  },
+  {
+    "candidate_id": "cand_002",
+    "current_title": "Applied Scientist - Search & Ranking",
+    "headline": "Building vector search and recommendation systems at scale",
+    "summary": "6 years in applied ML. Shipped recommendation engine serving 50M users. Deep expertise in Pinecone, hybrid search, learning-to-rank. Open-source contributor to Haystack.",
+    "location": "Noida, India",
+    "total_experience_years": 6.0,
+    "skills": [
+      {
+        "name": "python",
+        "proficiency": "Expert",
+        "years_used": 6
+      },
+      {
+        "name": "pinecone",
+        "proficiency": "Expert",
+        "years_used": 2
+      },
+      {
+        "name": "embeddings",
+        "proficiency": "Expert",
+        "years_used": 4
+      },
+      {
+        "name": "hybrid search",
+        "proficiency": "Advanced",
+        "years_used": 3
+      },
+      {
+        "name": "retrieval",
+        "proficiency": "Expert",
+        "years_used": 4
+      },
+      {
+        "name": "xgboost",
+        "proficiency": "Advanced",
+        "years_used": 3
+      },
+      {
+        "name": "ranking",
+        "proficiency": "Expert",
+        "years_used": 3
+      },
+      {
+        "name": "open source",
+        "proficiency": "Advanced",
+        "years_used": 2
+      }
+    ],
+    "work_experience": [
+      {
+        "title": "Applied Scientist",
+        "company": "Meesho",
+        "start_date": "2022-01-01",
+        "end_date": null,
+        "description": "Semantic recommendation system. Pinecone vector DB. XGBoost L2R. A/B testing, NDCG/MRR evaluation."
+      },
+      {
+        "title": "Data Scientist",
+        "company": "Swiggy",
+        "start_date": "2020-04-01",
+        "end_date": "2021-12-31",
+        "description": "Search ranking, information retrieval, Python production ML."
+      }
+    ],
+    "education": [
+      {
+        "degree": "M.Tech",
+        "field_of_study": "AI",
+        "institution": "IIT Delhi"
+      }
+    ],
+    "redrob_signals": {
+      "open_to_work_flag": true,
+      "last_active_date": "2026-06-20",
+      "recruiter_response_rate": 0.92,
+      "interview_completion_rate": 0.88,
+      "profile_completeness_score": 95,
+      "github_activity_score": 85,
+      "notice_period_days": 45,
+      "willing_to_relocate": false
+    }
+  },
+  {
+    "candidate_id": "cand_003",
+    "current_title": "NLP Engineer",
+    "headline": "NLP & Search systems, sentence transformers, Qdrant, Python",
+    "summary": "5.5 years building NLP pipelines and semantic search. Qdrant, Weaviate, sentence-transformers. MRR/MAP evaluation. Product company background only.",
+    "location": "Hyderabad, India",
+    "total_experience_years": 5.5,
+    "skills": [
+      {
+        "name": "python",
+        "proficiency": "Expert",
+        "years_used": 5
+      },
+      {
+        "name": "sentence-transformers",
+        "proficiency": "Advanced",
+        "years_used": 3
+      },
+      {
+        "name": "qdrant",
+        "proficiency": "Advanced",
+        "years_used": 2
+      },
+      {
+        "name": "weaviate",
+        "proficiency": "Intermediate",
+        "years_used": 1
+      },
+      {
+        "name": "retrieval",
+        "proficiency": "Advanced",
+        "years_used": 4
+      },
+      {
+        "name": "mrr",
+        "proficiency": "Advanced",
+        "years_used": 2
+      },
+      {
+        "name": "lora",
+        "proficiency": "Intermediate",
+        "years_used": 1
+      }
+    ],
+    "work_experience": [
+      {
+        "title": "NLP Engineer",
+        "company": "Zeta",
+        "start_date": "2022-07-01",
+        "end_date": null,
+        "description": "Semantic search, Qdrant, sentence-transformers. Fine-tuning with LoRA."
+      },
+      {
+        "title": "Junior ML Engineer",
+        "company": "Freshworks",
+        "start_date": "2020-08-01",
+        "end_date": "2022-06-30",
+        "description": "NLP, information retrieval, Python."
+      }
+    ],
+    "education": [
+      {
+        "degree": "B.E.",
+        "field_of_study": "CSE",
+        "institution": "BITS Pilani"
+      }
+    ],
+    "redrob_signals": {
+      "open_to_work_flag": true,
+      "last_active_date": "2026-06-10",
+      "recruiter_response_rate": 0.7,
+      "interview_completion_rate": 0.8,
+      "profile_completeness_score": 88,
+      "github_activity_score": 55,
+      "notice_period_days": 60,
+      "willing_to_relocate": true
+    }
+  },
+  {
+    "candidate_id": "cand_004",
+    "current_title": "Consultant - AI/ML",
+    "headline": "AI Consultant delivering ML solutions for enterprise clients",
+    "summary": "8 years of ML consulting across banking, retail, logistics. Strong Python. Projects involve NLP, embeddings, chatbots.",
+    "location": "Mumbai, India",
+    "total_experience_years": 8.0,
+    "skills": [
+      {
+        "name": "python",
+        "proficiency": "Expert",
+        "years_used": 8
+      },
+      {
+        "name": "embeddings",
+        "proficiency": "Advanced",
+        "years_used": 2
+      },
+      {
+        "name": "nlp",
+        "proficiency": "Advanced",
+        "years_used": 5
+      }
+    ],
+    "work_experience": [
+      {
+        "title": "Senior Consultant",
+        "company": "Infosys",
+        "start_date": "2021-01-01",
+        "end_date": null,
+        "description": "ML consulting, NLP, embeddings for enterprise clients."
+      },
+      {
+        "title": "Consultant",
+        "company": "TCS",
+        "start_date": "2018-04-01",
+        "end_date": "2020-12-31",
+        "description": "Data science consulting, Python, machine learning."
+      },
+      {
+        "title": "Associate",
+        "company": "Wipro",
+        "start_date": "2016-06-01",
+        "end_date": "2018-03-31",
+        "description": "Analytics and reporting."
+      }
+    ],
+    "education": [
+      {
+        "degree": "MBA",
+        "field_of_study": "Analytics",
+        "institution": "IIM Calcutta"
+      }
+    ],
+    "redrob_signals": {
+      "open_to_work_flag": false,
+      "last_active_date": "2026-05-01",
+      "recruiter_response_rate": 0.4,
+      "interview_completion_rate": 0.5,
+      "profile_completeness_score": 70,
+      "github_activity_score": 10,
+      "notice_period_days": 90,
+      "willing_to_relocate": false
+    }
+  },
+  {
+    "candidate_id": "cand_005",
+    "current_title": "Research Scientist",
+    "headline": "PhD in Information Retrieval. Dense retrieval, bi-encoders, cross-encoders.",
+    "summary": "5 years of research in information retrieval and neural ranking. Published at SIGIR, EMNLP. No production deployment experience \u2014 focused on academic research.",
+    "location": "Bangalore, India",
+    "total_experience_years": 5.0,
+    "skills": [
+      {
+        "name": "python",
+        "proficiency": "Expert",
+        "years_used": 5
+      },
+      {
+        "name": "retrieval",
+        "proficiency": "Expert",
+        "years_used": 5
+      },
+      {
+        "name": "embeddings",
+        "proficiency": "Expert",
+        "years_used": 4
+      },
+      {
+        "name": "ranking",
+        "proficiency": "Expert",
+        "years_used": 4
+      },
+      {
+        "name": "ndcg",
+        "proficiency": "Expert",
+        "years_used": 4
+      },
+      {
+        "name": "faiss",
+        "proficiency": "Advanced",
+        "years_used": 3
+      }
+    ],
+    "work_experience": [
+      {
+        "title": "Research Scientist",
+        "company": "IIT Research Lab",
+        "start_date": "2021-01-01",
+        "end_date": null,
+        "description": "Pure research scientist. Academic publications, no production code. phd researcher role."
+      },
+      {
+        "title": "Research Intern",
+        "company": "Microsoft Research",
+        "start_date": "2019-05-01",
+        "end_date": "2020-12-31",
+        "description": "Dense retrieval research."
+      }
+    ],
+    "education": [
+      {
+        "degree": "PhD",
+        "field_of_study": "Information Retrieval",
+        "institution": "IIT Madras"
+      }
+    ],
+    "redrob_signals": {
+      "open_to_work_flag": true,
+      "last_active_date": "2026-06-15",
+      "recruiter_response_rate": 0.6,
+      "interview_completion_rate": 0.75,
+      "profile_completeness_score": 80,
+      "github_activity_score": 60,
+      "notice_period_days": 30,
+      "willing_to_relocate": true
+    }
+  },
+  {
+    "candidate_id": "cand_006",
+    "current_title": "ML Platform Engineer",
+    "headline": "Building ML infrastructure, vector search pipelines, and ranking systems at product scale",
+    "summary": "8 years. Strong in distributed systems, large-scale inference optimization, vector databases (Milvus, OpenSearch). Production ranking + recommendation systems shipped.",
+    "location": "Noida, India",
+    "total_experience_years": 8.5,
+    "skills": [
+      {
+        "name": "python",
+        "proficiency": "Expert",
+        "years_used": 8
+      },
+      {
+        "name": "milvus",
+        "proficiency": "Expert",
+        "years_used": 3
+      },
+      {
+        "name": "opensearch",
+        "proficiency": "Expert",
+        "years_used": 4
+      },
+      {
+        "name": "retrieval",
+        "proficiency": "Expert",
+        "years_used": 5
+      },
+      {
+        "name": "embeddings",
+        "proficiency": "Expert",
+        "years_used": 4
+      },
+      {
+        "name": "distributed systems",
+        "proficiency": "Expert",
+        "years_used": 6
+      },
+      {
+        "name": "inference optimization",
+        "proficiency": "Advanced",
+        "years_used": 3
+      },
+      {
+        "name": "ranking",
+        "proficiency": "Advanced",
+        "years_used": 4
+      }
+    ],
+    "work_experience": [
+      {
+        "title": "Staff ML Engineer",
+        "company": "Nykaa",
+        "start_date": "2020-09-01",
+        "end_date": null,
+        "description": "ML platform, vector search, Milvus, OpenSearch. Shipped product ranking and recommendation at scale."
+      },
+      {
+        "title": "Senior SDE",
+        "company": "Paytm",
+        "start_date": "2017-07-01",
+        "end_date": "2020-08-31",
+        "description": "ML infrastructure, distributed systems, Python."
+      }
+    ],
+    "education": [
+      {
+        "degree": "B.Tech",
+        "field_of_study": "Computer Science",
+        "institution": "NIT Trichy"
+      }
+    ],
+    "redrob_signals": {
+      "open_to_work_flag": true,
+      "last_active_date": "2026-06-22",
+      "recruiter_response_rate": 0.8,
+      "interview_completion_rate": 0.85,
+      "profile_completeness_score": 90,
+      "github_activity_score": 65,
+      "notice_period_days": 60,
+      "willing_to_relocate": false
+    }
+  },
+  {
+    "candidate_id": "cand_007",
+    "current_title": "Computer Vision Engineer",
+    "headline": "Object detection, image segmentation, OpenCV, PyTorch",
+    "summary": "4 years in computer vision. YOLO, OpenCV, image classification, speech recognition. No NLP or search/ranking experience.",
+    "location": "Chennai, India",
+    "total_experience_years": 4.0,
+    "skills": [
+      {
+        "name": "python",
+        "proficiency": "Expert",
+        "years_used": 4
+      },
+      {
+        "name": "computer vision",
+        "proficiency": "Expert",
+        "years_used": 4
+      },
+      {
+        "name": "pytorch",
+        "proficiency": "Advanced",
+        "years_used": 3
+      },
+      {
+        "name": "speech recognition",
+        "proficiency": "Intermediate",
+        "years_used": 2
+      },
+      {
+        "name": "robotics",
+        "proficiency": "Intermediate",
+        "years_used": 1
+      }
+    ],
+    "work_experience": [
+      {
+        "title": "CV Engineer",
+        "company": "Pixis",
+        "start_date": "2022-03-01",
+        "end_date": null,
+        "description": "Computer vision, image detection, OpenCV, PyTorch."
+      },
+      {
+        "title": "Junior ML Engineer",
+        "company": "Ola",
+        "start_date": "2020-07-01",
+        "end_date": "2022-02-28",
+        "description": "Computer vision for autonomous driving."
+      }
+    ],
+    "education": [
+      {
+        "degree": "B.Tech",
+        "field_of_study": "ECE",
+        "institution": "VIT"
+      }
+    ],
+    "redrob_signals": {
+      "open_to_work_flag": true,
+      "last_active_date": "2026-06-18",
+      "recruiter_response_rate": 0.75,
+      "interview_completion_rate": 0.7,
+      "profile_completeness_score": 82,
+      "github_activity_score": 50,
+      "notice_period_days": 30,
+      "willing_to_relocate": true
+    }
+  },
+  {
+    "candidate_id": "cand_008",
+    "current_title": "Data Scientist",
+    "headline": "LangChain + OpenAI RAG apps and LLM wrapper integrations",
+    "summary": "2 years in AI. Recently pivoted to ML. Primarily building LangChain/OpenAI API wrappers, RAG chatbots. No prior ML production experience before 2024.",
+    "location": "Pune, India",
+    "total_experience_years": 2.0,
+    "skills": [
+      {
+        "name": "python",
+        "proficiency": "Intermediate",
+        "years_used": 2
+      },
+      {
+        "name": "langchain",
+        "proficiency": "Advanced",
+        "years_used": 1
+      },
+      {
+        "name": "openai",
+        "proficiency": "Advanced",
+        "years_used": 1
+      },
+      {
+        "name": "embeddings",
+        "proficiency": "Intermediate",
+        "years_used": 0
+      }
+    ],
+    "work_experience": [
+      {
+        "title": "Data Scientist",
+        "company": "TechStartup",
+        "start_date": "2024-01-01",
+        "end_date": null,
+        "description": "LangChain RAG chatbot, OpenAI API wrappers, basic embeddings."
+      }
+    ],
+    "education": [
+      {
+        "degree": "B.Sc.",
+        "field_of_study": "Statistics",
+        "institution": "Mumbai University"
+      }
+    ],
+    "redrob_signals": {
+      "open_to_work_flag": true,
+      "last_active_date": "2026-06-26",
+      "recruiter_response_rate": 0.9,
+      "interview_completion_rate": 0.6,
+      "profile_completeness_score": 65,
+      "github_activity_score": 30,
+      "notice_period_days": 15,
+      "willing_to_relocate": true
+    }
+  },
+  {
+    "candidate_id": "cand_009",
+    "current_title": "HONEYPOT - Fake Profile",
+    "headline": "Expert in everything, 0 years experience",
+    "summary": "Expert in all ML technologies. Built world-class systems.",
+    "location": "Pune, India",
+    "total_experience_years": 1.0,
+    "skills": [
+      {
+        "name": "python",
+        "proficiency": "Expert",
+        "years_used": 0
+      },
+      {
+        "name": "faiss",
+        "proficiency": "Expert",
+        "years_used": 0
+      },
+      {
+        "name": "embeddings",
+        "proficiency": "Expert",
+        "years_used": 0
+      },
+      {
+        "name": "qdrant",
+        "proficiency": "Expert",
+        "years_used": 0
+      },
+      {
+        "name": "ranking",
+        "proficiency": "Expert",
+        "years_used": 0
+      },
+      {
+        "name": "retrieval",
+        "proficiency": "Expert",
+        "years_used": 0
+      },
+      {
+        "name": "ndcg",
+        "proficiency": "Expert",
+        "years_used": 0
+      },
+      {
+        "name": "lora",
+        "proficiency": "Expert",
+        "years_used": 0
+      }
+    ],
+    "work_experience": [
+      {
+        "title": "Senior AI Engineer",
+        "company": "FutureCorp",
+        "company_founded_year": 2025,
+        "start_date": "2019-01-01",
+        "end_date": null,
+        "description": "Built production ML systems before the company existed."
+      },
+      {
+        "title": "ML Engineer",
+        "company": "AnotherFakeCorp",
+        "company_founded_year": 2023,
+        "start_date": "2018-01-01",
+        "end_date": "2020-01-01",
+        "description": "Another impossible timeline."
+      }
+    ],
+    "education": [
+      {
+        "degree": "B.Tech",
+        "field_of_study": "CS",
+        "institution": "Some University"
+      }
+    ],
+    "redrob_signals": {
+      "open_to_work_flag": true,
+      "last_active_date": "2026-06-27",
+      "recruiter_response_rate": 0.95,
+      "interview_completion_rate": 0.1,
+      "profile_completeness_score": 40,
+      "github_activity_score": 5,
+      "notice_period_days": 0,
+      "willing_to_relocate": true
+    }
+  },
+  {
+    "candidate_id": "cand_010",
+    "current_title": "Senior AI Engineer",
+    "headline": "Embedding systems, vector search, production ML \u2014 9 years shipping ranking systems",
+    "summary": "9 years. Led ranking and retrieval platform at Zomato (served 100M users). FAISS, Pinecone, Weaviate, Elasticsearch, OpenSearch. A/B testing, NDCG/MRR evaluation. Fine-tuned embedding models (LoRA, PEFT). Open-source: contributed to sentence-transformers.",
+    "location": "Pune, India",
+    "total_experience_years": 9.0,
+    "skills": [
+      {
+        "name": "python",
+        "proficiency": "Expert",
+        "years_used": 9
+      },
+      {
+        "name": "embeddings",
+        "proficiency": "Expert",
+        "years_used": 6
+      },
+      {
+        "name": "faiss",
+        "proficiency": "Expert",
+        "years_used": 5
+      },
+      {
+        "name": "pinecone",
+        "proficiency": "Expert",
+        "years_used": 3
+      },
+      {
+        "name": "weaviate",
+        "proficiency": "Advanced",
+        "years_used": 2
+      },
+      {
+        "name": "elasticsearch",
+        "proficiency": "Expert",
+        "years_used": 6
+      },
+      {
+        "name": "opensearch",
+        "proficiency": "Advanced",
+        "years_used": 2
+      },
+      {
+        "name": "ranking",
+        "proficiency": "Expert",
+        "years_used": 6
+      },
+      {
+        "name": "retrieval",
+        "proficiency": "Expert",
+        "years_used": 7
+      },
+      {
+        "name": "ndcg",
+        "proficiency": "Expert",
+        "years_used": 5
+      },
+      {
+        "name": "mrr",
+        "proficiency": "Expert",
+        "years_used": 5
+      },
+      {
+        "name": "a/b testing",
+        "proficiency": "Expert",
+        "years_used": 5
+      },
+      {
+        "name": "hybrid search",
+        "proficiency": "Expert",
+        "years_used": 4
+      },
+      {
+        "name": "lora",
+        "proficiency": "Advanced",
+        "years_used": 2
+      },
+      {
+        "name": "peft",
+        "proficiency": "Advanced",
+        "years_used": 2
+      },
+      {
+        "name": "sentence-transformers",
+        "proficiency": "Expert",
+        "years_used": 4
+      },
+      {
+        "name": "open source",
+        "proficiency": "Advanced",
+        "years_used": 3
+      },
+      {
+        "name": "vector database",
+        "proficiency": "Expert",
+        "years_used": 4
+      }
+    ],
+    "work_experience": [
+      {
+        "title": "Senior AI Engineer",
+        "company": "Zomato",
+        "start_date": "2019-06-01",
+        "end_date": null,
+        "description": "Led ranking and retrieval platform. FAISS, Pinecone, Weaviate. NDCG/MRR evaluation framework. LoRA fine-tuning of embedding models. Sentence-transformers open-source contribution. A/B testing infrastructure."
+      },
+      {
+        "title": "ML Engineer",
+        "company": "Practo",
+        "start_date": "2015-07-01",
+        "end_date": "2019-05-31",
+        "description": "Search ranking, hybrid search, Elasticsearch, Python production ML."
+      }
+    ],
+    "education": [
+      {
+        "degree": "B.Tech",
+        "field_of_study": "Computer Science",
+        "institution": "NIT Surathkal"
+      }
+    ],
+    "redrob_signals": {
+      "open_to_work_flag": true,
+      "last_active_date": "2026-06-26",
+      "recruiter_response_rate": 0.88,
+      "interview_completion_rate": 0.92,
+      "profile_completeness_score": 98,
+      "github_activity_score": 90,
+      "notice_period_days": 30,
+      "willing_to_relocate": true
+    }
+  }
+]

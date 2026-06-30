@@ -1,0 +1,15 @@
+# ── Core (required for full pipeline: rank.py + app.py) ───────────────────────
+sentence-transformers==2.7.0
+faiss-cpu==1.8.0
+pandas==2.2.2
+numpy==1.26.4
+tqdm==4.66.4
+anthropic==0.28.0
+streamlit==1.36.0
+
+# ── rank_lite.py (no GPU/FAISS needed) ────────────────────────────────────────
+# Only needs: pandas, numpy — already included above.
+# TF-IDF similarity is computed with stdlib math only.
+
+# ── Optional for development ───────────────────────────────────────────────────
+# pytest==8.2.2
