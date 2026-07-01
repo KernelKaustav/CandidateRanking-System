@@ -1,8 +1,59 @@
-# Redrob Intelligent Candidate Ranker
+# 🎯 Redrob Intelligent Candidate Ranker
 
 > Hackathon submission for the **Intelligent Candidate Discovery & Ranking Challenge**
 
-## Architecture
+[![HuggingFace Space](https://img.shields.io/badge/🤗%20HuggingFace-Live%20Demo-orange?style=for-the-badge)](https://huggingface.co/spaces/Kaustav27/Candidate_ranker)
+[![GitHub](https://img.shields.io/badge/GitHub-Source%20Code-black?style=for-the-badge&logo=github)](https://github.com/KernelKaustav/CandidateRanking-System)
+[![Demo Video](https://img.shields.io/badge/▶%20Demo-Google%20Drive-blue?style=for-the-badge)](https://drive.google.com/drive/folders/1ecwfLtnZ3ddXszg52ubKnLTEJvNQKN43?usp=sharing)
+
+---
+
+## 🚀 Live Demo
+
+**HuggingFace Space:** https://huggingface.co/spaces/Kaustav27/Candidate_ranker
+
+**Demo Video:** https://drive.google.com/drive/folders/1ecwfLtnZ3ddXszg52ubKnLTEJvNQKN43?usp=sharing
+
+---
+
+## 📸 Screenshots
+
+### Upload & Run
+Upload a JSON/JSONL candidates file, configure scoring weights (Optimal or Manual mode), and hit **Run Ranker**.
+
+![Upload Screen](screenshots/upload.png)
+
+---
+
+### Score Distribution & Component Breakdown
+Visual bar chart of score distribution across all ranked candidates, plus a donut chart showing average contribution of each weighted signal.
+
+![Score Distribution](screenshots/score_distribution.png)
+
+---
+
+### Ranked Candidates Table
+Full ranked table with Candidate ID, Score, Semantic Similarity, Experience Years, Skills %, Behavioral score, and Active status.
+
+![Ranked Candidates](screenshots/ranked_candidates.png)
+
+---
+
+### JD Understanding & Candidate Evaluation
+Parsed job description signals (required skills, nice-to-haves, disqualifiers, ideal profile, locations) alongside all candidate signals used for scoring.
+
+![JD Understanding](screenshots/jd_understanding.png)
+
+---
+
+### Technologies Used
+Architecture choices explained — BGE-small, FAISS, Claude API, Python stack, Streamlit, GitHub.
+
+![Technologies](screenshots/technologies.png)
+
+---
+
+## 🏗️ Architecture
 
 ```
 Job Description (text)
@@ -39,7 +90,9 @@ Job Description (text)
                               submission.csv
 ```
 
-## Scoring Formula
+---
+
+## 📐 Scoring Formula
 
 ```
 score = (
@@ -53,15 +106,18 @@ score = (
 ) × penalty_multiplier
 ```
 
-Penalties (multiplicative):
-- `0.50×` — entire career at consulting firms (TCS, Infosys, etc.)
-- `0.80×` — location mismatch + unwilling to relocate
-- `0.00×` — honeypot profile detected (timeline impossibilities)
-- `0.60^n×` — n disqualifier keyword hits
+**Penalties (multiplicative):**
+
+| Multiplier | Condition |
+|---|---|
+| `0.50×` | Entire career at consulting firms (TCS, Infosys, Wipro, etc.) |
+| `0.80×` | Location mismatch + unwilling to relocate |
+| `0.00×` | Honeypot profile detected (timeline impossibilities) |
+| `0.60^n×` | n disqualifier keyword hits |
 
 ---
 
-## Quick Start
+## ⚡ Quick Start
 
 ### Option A — Full Pipeline (BGE + FAISS, production-grade)
 
@@ -82,7 +138,7 @@ python rank.py --candidates candidates.jsonl --out submission.csv --skip-precomp
 python rank.py --candidates sample_candidates.json --out submission.csv --sample
 ```
 
-### Option B — Lightweight (no GPU deps, TF-IDF similarity fallback)
+### Option B — Lightweight (no GPU deps, TF-IDF fallback)
 
 ```bash
 # Only needs: pip install pandas numpy
@@ -98,7 +154,7 @@ python test_pipeline.py
 
 Validates: feature extraction, scoring logic, honeypot detection, consulting penalty, CSV format.
 
-### Streamlit Demo
+### Streamlit Demo (local)
 
 ```bash
 streamlit run app.py
@@ -106,7 +162,7 @@ streamlit run app.py
 
 ---
 
-## File Structure
+## 📁 File Structure
 
 ```
 ├── rank.py                  # Main entry point (BGE + FAISS, production)
@@ -119,7 +175,9 @@ streamlit run app.py
 ├── app.py                   # Streamlit sandbox demo
 ├── test_pipeline.py         # End-to-end pipeline tests
 ├── sample_candidates.json   # 10 test candidates (covers all edge cases)
+├── jd_parsed.json           # Pre-parsed JD (committed)
 ├── requirements.txt
+├── Candidate_ranker/        # HuggingFace Space (git submodule)
 ├── precomputed/             # FAISS index cache (created by rank.py Phase 1)
 │   ├── candidates.faiss
 │   ├── embeddings.npy
@@ -130,48 +188,62 @@ streamlit run app.py
 
 ---
 
-## Sample Candidates Coverage
+## 🧪 Sample Candidates Coverage
 
-| ID         | Profile Type                        | Expected Ranking Behavior     |
-|------------|-------------------------------------|-------------------------------|
-| cand_010   | 9yr Senior AI Eng, full skill match | Rank #1                       |
-| cand_001   | 7yr ML Eng, Flipkart (product co)   | Top 3                         |
-| cand_002   | 6yr Applied Scientist, Meesho       | Top 3                         |
-| cand_006   | 8yr ML Platform, Nykaa              | Top 5                         |
-| cand_003   | 5.5yr NLP Eng, Qdrant               | Mid-tier                      |
-| cand_005   | 5yr Research Scientist, no prod     | Penalised (disqualifier hit)  |
-| cand_004   | 8yr Consultant, TCS+Infosys+Wipro   | Penalised 50× (consulting)    |
-| cand_007   | 4yr CV Engineer (vision/speech)     | Penalised (CV-only mismatch)  |
-| cand_008   | 2yr LangChain wrapper only          | Low (insufficient exp + skill)|
-| cand_009   | Honeypot — impossible timelines     | Score = 0.00, rank last       |
+| ID | Profile Type | Expected Ranking Behavior |
+|---|---|---|
+| cand_010 | 9yr Senior AI Eng, full skill match | Rank #1 |
+| cand_001 | 7yr ML Eng, Flipkart (product co) | Top 3 |
+| cand_002 | 6yr Applied Scientist, Meesho | Top 3 |
+| cand_006 | 8yr ML Platform, Nykaa | Top 5 |
+| cand_003 | 5.5yr NLP Eng, Qdrant | Mid-tier |
+| cand_005 | 5yr Research Scientist, no prod | Penalised (disqualifier hit) |
+| cand_004 | 8yr Consultant, TCS+Infosys+Wipro | Penalised 0.50× (consulting) |
+| cand_007 | 4yr CV Engineer (vision/speech) | Penalised (CV-only mismatch) |
+| cand_008 | 2yr LangChain wrapper only | Low (insufficient exp + skill) |
+| cand_009 | Honeypot — impossible timelines | Score = 0.00, rank last |
 
 ---
 
-## Compute Constraints Compliance
+## 📊 Compute Constraints Compliance
 
 | Constraint | Limit | Approach |
 |---|---|---|
-| Runtime (ranking step) | ≤ 5 min | FAISS load + cosine sim + scoring ≈ 30-60s for 100K |
+| Runtime (ranking step) | ≤ 5 min | FAISS load + cosine sim + scoring ≈ 30–60s for 100K |
 | Memory | ≤ 16 GB | BGE-small (100K × 384 × 4B) ≈ 150 MB |
 | Compute | CPU only | FAISS IndexFlatIP, no CUDA required |
 | Network | Off during ranking | All models preloaded; no API calls in Phase 2 |
 
 ---
 
-## Key Design Decisions
+## 🧠 Key Design Decisions
 
 **Why BGE-small over larger models?**
-BGE-small-en-v1.5 (22M params, 384 dim) encodes 100K candidates in ~8 min on CPU.
-Larger models exceed the 5-min ranking budget. Quality is sufficient for candidate–JD matching.
+BGE-small-en-v1.5 (22M params, 384 dim) encodes 100K candidates in ~8 min on CPU. Larger models exceed the 5-min ranking budget. Quality is sufficient for candidate–JD matching.
 
 **Why weighted scoring vs pure semantic search?**
-Pure embedding similarity is fooled by keyword stuffers. Behavioral signals (last_active, response_rate)
-filter "on-paper-perfect but unreachable" candidates — a real-world constraint the JD explicitly highlights.
+Pure embedding similarity is fooled by keyword stuffers. Behavioral signals (`last_active`, `response_rate`) filter "on-paper-perfect but unreachable" candidates — a real-world constraint the JD explicitly highlights.
 
 **Why template reasoning vs LLM per candidate?**
-100K × LLM call is impossible within a 5-min CPU budget. Template reasoning is factual (zero hallucination
-risk), rank-consistent, and specific to each candidate's actual profile data.
+100K × LLM call is impossible within a 5-min CPU budget. Template reasoning is factual (zero hallucination risk), rank-consistent, and specific to each candidate's actual profile data.
 
 **How are honeypots detected?**
-Timeline impossibilities (start_date before company_founded_year) and implausible skill inflation
-(Expert in many skills with 0 years used) trigger a 0.0× penalty — zeroing the candidate's score.
+Timeline impossibilities (`start_date` before `company_founded_year`) and implausible skill inflation (Expert in many skills with 0 years used) trigger a `0.0×` penalty — zeroing the candidate's score.
+
+---
+
+## 🛠️ Tech Stack
+
+| Component | Technology |
+|---|---|
+| Embeddings | BGE-small-en-v1.5 (22M params, 384 dim) |
+| Vector Search | FAISS IndexFlatIP (CPU) |
+| JD Parsing | Claude API — `claude-sonnet-4-6` (offline) |
+| Scoring | Custom weighted formula + penalty multipliers |
+| Reasoning | Template-based (zero hallucination risk) |
+| Demo UI | Streamlit |
+| Hosting | HuggingFace Spaces |
+
+---
+
+*Redrob Hackathon 2026 · BGE-small + FAISS + Weighted Scoring + Template Reasoning*
