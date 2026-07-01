@@ -2,7 +2,7 @@
 rank.py
 -------
 MAIN ENTRY POINT — produces the submission CSV.
-
+FOR app
 Two-phase design:
   Phase 1 (precompute, can be slow, run once):
     - Load all candidates

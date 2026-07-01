@@ -1,14 +1,8 @@
 """
-rank_lite.py  —  Real schema, CPU-only (no sentence-transformers)
------------------------------------------------------------------
 Uses TF-IDF cosine similarity as the semantic layer.
 Identical scoring logic and penalties as rank.py.
 
 Produces a valid submission CSV.
-
-Usage:
-    python rank_lite.py --candidates candidates.jsonl --out team_xxx.csv
-    python rank_lite.py --candidates candidates.jsonl --out team_xxx.csv --top 100 --verbose
 """
 
 from __future__ import annotations
