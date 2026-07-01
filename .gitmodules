@@ -1,0 +1,3 @@
+[submodule "Candidate_ranker"]
+	path = Candidate_ranker
+	url = https://huggingface.co/spaces/Kaustav27/Candidate_ranker
